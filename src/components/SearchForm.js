@@ -25,6 +25,7 @@ export default function SearchForm() {
           onChange={changeHandler("name")}
           placeholder="Search Characters"
         />
+        <button type="submit">And Awaaaay We Go!</button>
       </form>
     </section>
   );
