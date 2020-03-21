@@ -6,7 +6,7 @@ export default function SearchForm() {
     <section className="search-form">
       // Add a search form here
       <Form>
-        <Field name="search" placeholder="Search Characters" />
+        <Field name="search" placeholder="Search Characters"></Field>
         <button type="submit">And Awaaaaaay We Go!</button>
       </Form>
     </section>
