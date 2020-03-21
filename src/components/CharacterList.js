@@ -17,7 +17,7 @@ export default function CharacterList() {
         )
         .then(response => {
           console.log(response);
-          setCharacterListState(response.data);
+          setCharacterListState([response.data]);
         })
         .catch(error => {
           console.error("Server Error", error);
