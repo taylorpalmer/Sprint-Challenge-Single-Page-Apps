@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
-  const [charListState, setCharListState] = useState({});
+  const [charListState, setCharListState] = useState([]);
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -13,16 +13,16 @@ export default function CharacterList() {
         "https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/"
       )
       .then(function(response) {
-        console.log(response);
+        console.log(response.data.results);
       })
       .catch(function(error) {
-        console.log(error);
+        console.log("Server Error", error);
       });
   }, []);
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <h2>{TODO: `array.map()` over your state here!}</h2>
     </section>
   );
 }
