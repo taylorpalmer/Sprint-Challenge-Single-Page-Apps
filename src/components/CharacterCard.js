@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 const CharacterCard = props => {
   console.log(props);
 
+  const result = props.charListState.find(({ id }) => id === `${id}`);
+
   return (
     <div>
       <Link to="/">Home</Link>
@@ -11,7 +13,7 @@ const CharacterCard = props => {
       <img src={props.character.image} />
       <p>{props.character.species}</p> */}
 
-      {/* <h2>{charCard.name}</h2> */}
+      <h2>{result}</h2>
     </div>
   );
 };

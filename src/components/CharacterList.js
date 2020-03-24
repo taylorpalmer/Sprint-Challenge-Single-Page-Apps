@@ -5,6 +5,7 @@ import SearchForm from "./SearchForm";
 const CharacterList = props => {
   return (
     <section className="character-list">
+      <Link to="/">Home</Link>
       <SearchForm />
       <p>
         {props.charListState.map(character => (
