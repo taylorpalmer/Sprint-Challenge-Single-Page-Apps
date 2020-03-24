@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CharacterCard = (props) => {
+const CharacterCard = props => {
   return (
-    <p>{props.character.name}</p>
-    <img src={props.character.image} />
-    );
-}
+    <div>
+      <Link to="/" />
+      <p>{props.character.name}</p>
+      <img src={props.character.image} />
+      <p>{props.character.species}</p>
+    </div>
+  );
+};
+
+export default CharacterCard;
