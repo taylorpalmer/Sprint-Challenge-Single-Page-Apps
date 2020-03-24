@@ -5,7 +5,8 @@ import WelcomePage from "./components/WelcomePage.js";
 import CharacterList from "./components/CharacterList.js";
 import CharacterCard from "./components/CharacterCard.js";
 
-export default function App() {
+const App = props => {
+  console.log(props);
   return (
     <main data-testid="app">
       <Header />
@@ -13,8 +14,17 @@ export default function App() {
       <Route path="/charlist" component={CharacterList} />
       <Route
         path="/characters/:id"
-        render={props => <CharacterCard {...props} name={props.name} />}
+        render={props => (
+          <CharacterCard
+            {...props}
+            name={props.character.name}
+            species={props.character.species}
+            image={props.character.image}
+          />
+        )}
       />
     </main>
   );
-}
+};
+
+export default App;
