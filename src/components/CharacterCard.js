@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CharacterCard = props => {
-  console.log(props);
+  console.log(props.match.params);
 
-  const result = props.charListState.find(({ id }) => id === `${id}`);
+  const findChar = charId => charId === props.match.params;
+
+  const chosenChar = props.charListState.find(findChar);
 
   return (
     <div>
@@ -13,7 +15,7 @@ const CharacterCard = props => {
       <img src={props.character.image} />
       <p>{props.character.species}</p> */}
 
-      <h2>{result}</h2>
+      <h2>{chosenChar}</h2>
     </div>
   );
 };
