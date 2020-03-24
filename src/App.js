@@ -11,7 +11,10 @@ export default function App() {
       <Header />
       <Route exact path="/" component={WelcomePage} />
       <Route path="/charlist" component={CharacterList} />
-      <Route path="/characters/:id" component={CharacterCard} />
+      <Route
+        path="/characters/:id"
+        render={props => <CharacterCard {...props} name={props.name} />}
+      />
     </main>
   );
 }
