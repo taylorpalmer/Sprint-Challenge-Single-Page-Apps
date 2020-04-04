@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import CharacterList from "./CharacterList";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function WelcomePage() {
-  const [id, setId] = useState("");
-
   return (
     <section className="welcome-page">
       <header>
@@ -15,7 +13,7 @@ export default function WelcomePage() {
         />
       </header>
       <div>
-        <CharacterList id={id} />
+        <Link to="/charList">Character List</Link>
       </div>
     </section>
   );
