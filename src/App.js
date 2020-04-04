@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import Header from "./components/Header.js";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList.js";
+import CharacterCard from "./components/CharacterCard.js";
 
 const App = props => {
   const [charListState, setCharListState] = useState([]);
@@ -34,6 +35,12 @@ const App = props => {
         path="/charList"
         render={props => (
           <CharacterList {...props} charListState={charListState} />
+        )}
+      />
+      <Route
+        path="/characters/:id"
+        render={props => (
+          <CharacterCard {...props} charListState={charListState} />
         )}
       />
     </main>

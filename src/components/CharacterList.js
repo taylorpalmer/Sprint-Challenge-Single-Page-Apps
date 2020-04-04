@@ -13,7 +13,6 @@ const CharacterList = props => {
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
       <SearchForm onSubmit={searchTerm => setSearch(searchTerm)} />
       <div>
         {filtered.map(character => (
