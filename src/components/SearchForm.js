@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 
-export default function SearchForm() {
-  const [formState, setFormState] = useState({});
+export default function SearchForm(props) {
+  const [formState, setFormState] = useState({ name: "" });
 
   const changeHandler = key => event => {
     setFormState({
       ...formState,
       [key]: event.target.value
     });
+  };
 
-    setFormState({
-      name: ""
-    });
+  const handleSubmit = event => {
+    event.preventDefault();
+    props.onSubmit(formState.name);
   };
 
   return (
     <section className="search-form">
-      <form>
+      <form onSubmit={event => handleSubmit(event)}>
         <input
           type="text"
           value={formState.name}

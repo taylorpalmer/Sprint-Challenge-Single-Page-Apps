@@ -2,20 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CharacterCard = props => {
-  console.log(props.match.params);
+  console.log(props.charListState);
 
-  const findChar = charId => charId === props.match.params;
+  const findChar = char => {
+    console.log(props.match.params.id);
+    return `${char.id}` === props.match.params.id;
+  };
 
   const chosenChar = props.charListState.find(findChar);
+
+  if (!chosenChar) return <div>Loading...</div>;
 
   return (
     <div>
       <Link to="/">Home</Link>
-      {/* <p>{props.character.name}</p>
-      <img src={props.character.image} />
-      <p>{props.character.species}</p> */}
-
-      <h2>{chosenChar}</h2>
+      <p>{chosenChar.name}</p>
+      <img src={chosenChar.image} />
+      <p>{chosenChar.species}</p>
     </div>
   );
 };
