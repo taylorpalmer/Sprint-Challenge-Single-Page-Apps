@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Styled from "styled-components";
+
 import SearchForm from "./SearchForm";
 import CharacterCard from "./CharacterCard";
 

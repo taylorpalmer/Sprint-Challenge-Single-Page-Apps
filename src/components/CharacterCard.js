@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Styled from "styled-components";
 
 const CharacterCard = props => {
   console.log(props.charListState);

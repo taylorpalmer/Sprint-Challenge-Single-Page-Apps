@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Styled from "styled-components";
 
 export default function SearchForm(props) {
   const [formState, setFormState] = useState({ name: "" });
