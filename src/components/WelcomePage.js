@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import CharacterList from "./CharacterList";
 
 export default function WelcomePage() {
+  const [id, setId] = useState("");
+
   return (
     <section className="welcome-page">
       <header>
@@ -11,6 +14,9 @@ export default function WelcomePage() {
           alt="rick"
         />
       </header>
+      <div>
+        <CharacterList id={id} />
+      </div>
     </section>
   );
 }
