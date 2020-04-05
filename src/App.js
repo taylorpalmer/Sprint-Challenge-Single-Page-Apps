@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
+import styled from "styled-components";
+
 import Header from "./components/Header.js";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList.js";
 import CharacterCard from "./components/CharacterCard.js";
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #65ff00;
+`;
 
 const App = props => {
   const [charListState, setCharListState] = useState([]);
@@ -28,22 +37,24 @@ const App = props => {
   console.log(props);
 
   return (
-    <main data-testid="app">
-      <Header />
-      <Route exact path="/" component={WelcomePage} />
-      <Route
-        path="/charList"
-        render={props => (
-          <CharacterList {...props} charListState={charListState} />
-        )}
-      />
-      <Route
-        path="/characters/:id"
-        render={props => (
-          <CharacterCard {...props} charListState={charListState} />
-        )}
-      />
-    </main>
+    <Wrapper>
+      <main data-testid="app">
+        <Header />
+        <Route exact path="/" component={WelcomePage} />
+        <Route
+          path="/charList"
+          render={props => (
+            <CharacterList {...props} charListState={charListState} />
+          )}
+        />
+        <Route
+          path="/characters/:id"
+          render={props => (
+            <CharacterCard {...props} charListState={charListState} />
+          )}
+        />
+      </main>
+    </Wrapper>
   );
 };
 

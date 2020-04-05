@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Styled from "styled-components";
+import styled from "styled-components";
 
 import SearchForm from "./SearchForm";
-import CharacterCard from "./CharacterCard";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+`;
 
 const CharacterList = props => {
   // TODO: Add useState to track data from useEffect
@@ -15,14 +19,13 @@ const CharacterList = props => {
 
   return (
     <section className="character-list">
+      <StyledLink to="/">Home</StyledLink>
       <SearchForm onSubmit={searchTerm => setSearch(searchTerm)} />
-      <div>
-        {filtered.map(character => (
-          <Link to={`/characters/${character.id}`} key={character.id}>
-            <h2>{character.name}</h2>
-          </Link>
-        ))}
-      </div>
+      {filtered.map(character => (
+        <StyledLink to={`/characters/${character.id}`} key={character.id}>
+          <h2>{character.name}</h2>
+        </StyledLink>
+      ))}
     </section>
   );
 };
