@@ -6,10 +6,10 @@ import SearchForm from "./SearchForm";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: white;
+  color: blue;
 
   &:hover {
-    color: blue;
+    color: white;
   }
 `;
 

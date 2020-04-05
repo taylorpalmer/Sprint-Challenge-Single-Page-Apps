@@ -18,10 +18,10 @@ const PaddedImage = styled.img`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: white;
+  color: blue;
 
   &:hover {
-    color: blue;
+    color: white;
   }
 `;
 
