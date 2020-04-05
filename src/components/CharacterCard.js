@@ -5,6 +5,10 @@ import styled from "styled-components";
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
+
+  &:hover {
+    color: blue;
+  }
 `;
 
 const Wrapper = styled.div`

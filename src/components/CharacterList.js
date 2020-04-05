@@ -7,6 +7,10 @@ import SearchForm from "./SearchForm";
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
+
+  &:hover {
+    color: blue;
+  }
 `;
 
 const CharacterList = props => {

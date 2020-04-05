@@ -16,6 +16,15 @@ const PaddedImage = styled.img`
   margin: 10%;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    color: blue;
+  }
+`;
+
 export default function WelcomePage() {
   return (
     <section className="welcome-page">
@@ -28,7 +37,7 @@ export default function WelcomePage() {
             alt="rick"
           />
           <CenterDiv>
-            <Link to="/charList">Character List</Link>
+            <StyledLink to="/charList">Character List</StyledLink>
           </CenterDiv>
         </header>
       </Wrapper>
